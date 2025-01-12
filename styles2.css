@@ -1,0 +1,103 @@
+/* 确保页面的基本样式和布局 */
+body {
+    font-family: '海盐芝士冻冻体', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #00796b;
+}
+
+/* 作品展示区样式 */
+#work {
+    margin-top: 80px; /* 防止被固定的header覆盖 */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* 滚动容器 */
+.scroll-container {
+    width: 100%;
+    overflow: hidden; /* 隐藏滚动条 */
+    margin-bottom: 30px;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    animation: scrollLeftToRight 20s linear infinite; /* 左到右滚动 */
+}
+
+.scroll-content img {
+    margin-right: 20px; /* 图片间隔 */
+    height: 200px; /* 图片高度 */
+    object-fit: cover;
+}
+
+/* 上行滚动：左到右 */
+.top-row .scroll-content {
+    animation: scrollLeftToRight 20s linear infinite;
+}
+
+/* 下行滚动：右到左 */
+.bottom-row .scroll-content {
+    animation: scrollRightToLeft 20s linear infinite;
+}
+
+/* 左到右滚动动画 */
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* 假设每张图片宽度相同 */
+    }
+}
+
+/* 右到左滚动动画 */
+@keyframes scrollRightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

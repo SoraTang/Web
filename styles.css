@@ -1,0 +1,432 @@
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fef6e4;
+  /* 浅米色背景 */
+  color: #333;
+  cursor: url('images/mouse1.png'), auto;
+  /* 自定义鼠标光标 */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  /* 右对齐 */
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #444444;
+  font-weight: bold;
+  font-size: 40px; /* 调整字体大小 */
+  transition: color 0.3s;
+}
+
+
+header ul li a:hover {
+  color: #00796b;
+}
+
+section {
+  padding: 50px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* Loading screen styles */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fef6e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.animation img {
+  width: 450px;
+  height: auto;
+}
+
+/* Fade out effect */
+#loading-screen.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@font-face {
+  font-family: "Haiyanzhishidongdong-Regular-2";
+  src: url("fonts/Haiyanzhishidongdong-Regular-2.ttf") format("truetype");
+}
+
+#contact {
+  padding: 50px 20px;
+  margin-top: 20vh;
+  /* 使联系部分距离头图有足够的间距 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* 图片旋转动画 */
+#header-container {
+  position: relative;
+  /* 使容器内的元素能相对定位 */
+  height: 100vh;
+  /* 设置容器的高度与头图相同 */
+  overflow: hidden;
+  /* 防止图片超出容器的显示范围 */
+  border-bottom: 8px solid #000000;
+}
+
+#header-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/mountain.png');
+  background-size: cover;
+  background-position: center center;
+  z-index: 2;
+  /* 确保头图在旋转图片之上 */
+
+}
+
+#rotating-image {
+  position: absolute;
+  top: 50px;
+  /* 将旋转图像与头图对齐 */
+  left: 50%;
+  transform: translateX(-50%);
+  /* 水平居中 */
+  width: 1200px;
+  /* 设置图片宽度（可调整） */
+  animation: rotateImageReverse 8s linear infinite;
+  /* 旋转动画，每8秒旋转一圈 */
+  z-index: 1;
+  /* 将旋转图片放置在头图下层 */
+
+  /* 限制图片显示范围 */
+  clip-path: inset(0 0 0 0);
+  /* 确保图片只在容器内显示 */
+  object-fit: cover;
+  /* 确保图片按照容器大小适配 */
+}
+
+/* 旋转动画 */
+@keyframes rotateImageReverse {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(-360deg);
+  }
+}
+
+/* 作品展示框 */
+#work-display {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* 作品展示框 */
+.work-box {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  min-height: 650px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  /* 默认灰白色 */
+  transition: filter 0.3s ease;
+  /* 添加平滑过渡效果 */
+}
+
+.work-box:hover {
+  filter: grayscale(0%);
+  /* 鼠标悬浮时恢复彩色 */
+}
+
+/* 视频播放时保持彩色 */
+.work-box.playing {
+  filter: grayscale(0%) !important;
+  /* 视频播放时强制保持彩色 */
+}
+
+
+.work-frame {
+  width: 80%;
+  max-width: 900px;
+  height: 100%;
+  background-color: #fef6e4;
+  border-radius: 10px;
+  padding: 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.work-video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.work-display {
+  will-change: transform;
+  /* 提示浏览器优化渲染 */
+  transition: transform 0.2s ease-out;
+  /* 添加过渡动画 */
+}
+
+/* 图片初始状态：屏幕外左侧 */
+#hand-image {
+  position: absolute;
+  /* 使用绝对定位跟随滚动 */
+  width: 400px;
+  height: auto;
+  left: -200px;
+  /* 初始在屏幕外 */
+  transition: left 1s ease-out;
+  /* 添加滑入和滑出动画 */
+  z-index: 1000;
+}
+
+/* 图片滑入 */
+#hand-image.show {
+  left: 50px;
+  /* 滑入屏幕左侧 */
+}
+
+/* 图片滑出 */
+#hand-image.hide {
+  left: -300px;
+  /* 滑出屏幕左侧 */
+}
+
+/* 手部挥手动画 */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+    /* 初始状态 */
+    transform-origin: bottom;
+    /* 设置旋转轴心为底部 */
+  }
+
+  50% {
+    transform: rotate(15deg);
+    /* 挥手动作 */
+    transform-origin: bottom;
+    /* 旋转轴心保持在底部 */
+  }
+
+  100% {
+    transform: rotate(0deg);
+    /* 恢复原位 */
+    transform-origin: bottom;
+    /* 旋转轴心保持在底部 */
+  }
+}
+
+
+/* 手部图片悬停时触发动画 */
+#hand-image:hover {
+  animation: wave 0.5s ease-in-out;
+  /* 设置动画，持续时间为0.5秒 */
+}
+
+#character-container {
+  right: 2%;
+  /* 距右侧10% */
+  bottom: 2%;
+  /* 距底部10% */
+  z-index: 100;
+}
+
+#character {
+  opacity: 0;
+  /* 初始透明度为0，等待滚动触发 */
+  transition: opacity 0.6s ease-in-out;
+  /* 渐入渐出效果 */
+}
+
+/* 假设所有展示框的父容器是 .work-container */
+.work-container .work-box:nth-child(n+3) {
+  background-color: black;
+}
+
+/* 更改整个页面的背景颜色 */
+body {
+  transition: background-color 1s ease;
+  /* 设置平滑过渡 */
+}
+
+.work-container .work-box:nth-child(n+3) {
+  background-color: black;
+}
+
+/* 作品框容器 */
+.work-box {
+  position: relative; /* 保证星星容器可以定位在展示框内 */
+  /* 其他样式 */
+}
+
+/* 星星容器 */
+#star-container {
+  position: absolute; /* 绝对定位 */
+  top: 50%; /* 垂直居中 */
+  right: -400px; /* 距离右边10px */
+  transform: translateY(-50%); /* 使星星垂直居中 */
+}
+
+/* 星星图片样式 */
+#star {
+  width: 300px; /* 设置星星大小 */
+  height: auto;
+}
+/* 星星图片悬浮时切换图片 */
+#star:hover {
+  content: url('images/star2.png'); /* 当鼠标悬浮时切换图片 */
+}
+
+#footer-image {
+  border: 0cm;
+  margin: 0cm;
+  left: 0;
+  bottom: 0; /* 紧贴页面底部 */
+  width: 102%; /* 图片宽度占满屏幕 */
+  height: auto; /* 保持图片比例 */
+  z-index: 9999; /* 确保它在其他内容上方 */
+}
+
+/* 作品展示区样式 */
+
+/* 上行滚动：从右向左 */
+.scroll-container.top-row {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  direction: rtl; /* 从右向左 */
+  margin-bottom: 20px; /* 增加行间距 */
+}
+
+.scroll-container.top-row .scroll-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 300s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(80%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* 中行滚动：从左向右 */
+.scroll-container.middle-row {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  direction: ltr; /* 从左向右 */
+  margin-bottom: 20px; /* 增加行间距 */
+}
+
+.scroll-container.middle-row .scroll-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-right 300s linear infinite;
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-80%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 下行滚动：从右向左 */
+.scroll-container.bottom-row {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  direction: rtl; /* 从右向左 */
+}
+
+.scroll-container.bottom-row .scroll-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 300s linear infinite;
+}
+
+/* 设置所有滚动图片的大小 */
+.scroll-content img {
+  width: auto; /* 设置宽度 */
+  height: 480px; /* 保持比例 */
+  margin-right: 80px; /* 给每张图片添加间距 */
+}

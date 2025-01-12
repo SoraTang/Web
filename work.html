@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work - SoraTang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul style="font-family: '海盐芝士冻冻体', sans-serif;">
+                <li><a href="index.html">主页</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="work">
+        <!-- 上行滚动 (50个作品) -->
+        <div class="scroll-container top-row">
+            <div class="scroll-content">
+                <!-- 从1到50的作品 -->
+                <img src="images/works/top/26.png" alt="Artwork 26">
+                <img src="images/works/top/25.png" alt="Artwork 25">
+                <img src="images/works/top/24.png" alt="Artwork 24">
+                <img src="images/works/top/23.png" alt="Artwork 23">
+                <img src="images/works/top/22.png" alt="Artwork 22">
+                <img src="images/works/top/21.png" alt="Artwork 21">
+                <img src="images/works/top/20.png" alt="Artwork 20">
+                <img src="images/works/top/19.png" alt="Artwork 19">
+                <img src="images/works/top/18.png" alt="Artwork 18">
+                <img src="images/works/top/17.png" alt="Artwork 17">
+                <img src="images/works/top/16.png" alt="Artwork 16">
+                <img src="images/works/top/15.png" alt="Artwork 15">
+                <img src="images/works/top/14.png" alt="Artwork 14">
+                <img src="images/works/top/13.png" alt="Artwork 13">
+                <img src="images/works/top/12.png" alt="Artwork 12">
+                <img src="images/works/top/11.png" alt="Artwork 11">
+                <img src="images/works/top/10.png" alt="Artwork 10">
+                <img src="images/works/top/9.png" alt="Artwork 9">
+                <img src="images/works/top/8.png" alt="Artwork 8">
+                <img src="images/works/top/7.png" alt="Artwork 7">
+                <img src="images/works/top/6.png" alt="Artwork 6">
+                <img src="images/works/top/5.png" alt="Artwork 5">
+                <img src="images/works/top/4.jpg" alt="Artwork 4">
+                <img src="images/works/top/3.png" alt="Artwork 3">
+                <img src="images/works/top/2.png" alt="Artwork 2">
+                <img src="images/works/top/1.jpg" alt="Artwork 1">
+
+
+            </div>
+        </div>
+
+        <!-- 中行滚动 -->
+        <div class="scroll-container middle-row">
+            <div class="scroll-content">
+                <!-- 中行20个作品栏位 -->
+                <img src="images/works/mid/1.png" alt="Artwork 1">
+                <img src="images/works/mid/2.png" alt="Artwork 2">
+                <img src="images/works/mid/3.png" alt="Artwork 3">
+                <img src="images/works/mid/4.png" alt="Artwork 4">
+                <img src="images/works/mid/5.png" alt="Artwork 5">
+                <img src="images/works/mid/6.png" alt="Artwork 6">
+                <img src="images/works/mid/7.png" alt="Artwork 7">
+                <img src="images/works/mid/8.png" alt="Artwork 8">
+                <img src="images/works/mid/9.png" alt="Artwork 9">
+                <img src="images/works/mid/10.png" alt="Artwork 10">
+                <img src="images/works/mid/11.gif" alt="Artwork 11">
+                <img src="images/works/mid/12.png" alt="Artwork 12">
+                <img src="images/works/mid/13.png" alt="Artwork 13">
+                <img src="images/works/mid/14.png" alt="Artwork 14">
+                <img src="images/works/mid/15.png" alt="Artwork 15">
+            </div>
+        </div>
+
+
+        <!-- 下行滚动 -->
+        <div class="scroll-container bottom-row">
+            <div class="scroll-content">
+                <img src="images/works/bot/1.png" alt="Artwork 41">
+                <img src="images/works/bot/2.png" alt="Artwork 42">
+                <img src="images/works/bot/3.png" alt="Artwork 43">
+                <img src="images/works/bot/4.png" alt="Artwork 44">
+                <img src="images/works/bot/5.png" alt="Artwork 45">
+                <img src="images/works/bot/6.png" alt="Artwork 46">
+                <img src="images/works/bot/7.png" alt="Artwork 47">
+                <img src="images/works/bot/8.png" alt="Artwork 48">
+                <img src="images/works/bot/9.png" alt="Artwork 49">
+                <img src="images/works/bot/10.png" alt="Artwork 50">
+                <img src="images/works/bot/11.png" alt="Artwork 51">
+                <img src="images/works/bot/12.png" alt="Artwork 52">
+                <img src="images/works/bot/13.png" alt="Artwork 53">
+                <img src="images/works/bot/14.png" alt="Artwork 54">
+                <img src="images/works/bot/15.png" alt="Artwork 55">
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    window.onload = function () {
+        const topRow = document.querySelector('.scroll-container.top-row');
+        const middleRow = document.querySelector('.scroll-container.middle-row');
+        const bottomRow = document.querySelector('.scroll-container.bottom-row');
+
+        // 鼠标悬浮时暂停滚动
+        topRow.addEventListener('mouseenter', function () {
+            topRow.querySelector('.scroll-content').style.animationPlayState = 'paused';
+        });
+
+        topRow.addEventListener('mouseleave', function () {
+            topRow.querySelector('.scroll-content').style.animationPlayState = 'running';
+        });
+
+        middleRow.addEventListener('mouseenter', function () {
+            middleRow.querySelector('.scroll-content').style.animationPlayState = 'paused';
+        });
+
+        middleRow.addEventListener('mouseleave', function () {
+            middleRow.querySelector('.scroll-content').style.animationPlayState = 'running';
+        });
+
+        bottomRow.addEventListener('mouseenter', function () {
+            bottomRow.querySelector('.scroll-content').style.animationPlayState = 'paused';
+        });
+
+        bottomRow.addEventListener('mouseleave', function () {
+            bottomRow.querySelector('.scroll-content').style.animationPlayState = 'running';
+        });
+    };
+</script>
