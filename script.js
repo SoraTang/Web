@@ -177,10 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setupScrollImageChange(
         "character", // 角色图片容器的 ID
         [
-            "images/stone/1.png",
-            "images/stone/2.png",
-            "images/stone/3.png",
-            "images/stone/4.png",
+            "https://github.com/SoraTang/Web/releases/download/v1.0.1/1.png",
+            "https://github.com/SoraTang/Web/releases/download/v1.0.1/2.png",
+            "https://github.com/SoraTang/Web/releases/download/v1.0.1/3.png",
+            "https://github.com/SoraTang/Web/releases/download/v1.0.1/4.png",
         ], // 图片数组
         1400, // 开始切换的滚动距离
         2400  // 结束切换的滚动距离
