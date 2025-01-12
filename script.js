@@ -31,16 +31,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // 播放光标动画
     function playCursorAnimation() {
         const body = document.body;
-        setInterval(() => {
+        const animationInterval = setInterval(() => {
             // 切换到下一帧
             cursorIndex = (cursorIndex + 1) % cursorFrames.length;
             body.style.cursor = `url('https://github.com/SoraTang/Web/releases/download/v1.0.0/${cursorFrames[cursorIndex]}'), auto`;
+
+            // 动画结束后停止循环
+            if (cursorIndex === cursorFrames.length - 1) {
+                clearInterval(animationInterval);
+
+                // 将光标恢复到第一帧
+                setTimeout(() => {
+                    body.style.cursor = `url('https://github.com/SoraTang/Web/releases/download/v1.0.0/${cursorFrames[0]}'), auto`;
+                }, 100); // 确保动画结束后回到 mouse1
+            }
         }, 100); // 每帧切换时间 (毫秒)
     }
-
-    playCursorAnimation();  // 启动光标动画
-});
-
 
     // 每隔 5 秒播放一次动画
     setInterval(playCursorAnimation, 5000);
