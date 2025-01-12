@@ -90,7 +90,7 @@ body {
   
   @font-face {
     font-family: "Haiyanzhishidongdong-Regular-2";
-    src: url("https://github.com/SoraTang/Web/releases/download/v2.1.0/Haiyanzhishidongdong-Regular-2.ttf") format("truetype");
+    src: url("../Web/Haiyanzhishidongdong-Regular-2.ttf") format("truetype");
   }
   
   #contact {
