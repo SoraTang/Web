@@ -2,11 +2,12 @@
 
 body {
     margin: 0;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #fef6e4;
     /* 浅米色背景 */
     color: #333;
-    cursor: url(https://github.com/SoraTang/Web/releases/download/v1.0.0/mouse1.png), auto;
+    cursor: url('https://github.com/SoraTang/Web/releases/download/v1.0.0/mouse1.png'), auto;
     /* 自定义鼠标光标 */
   }
   
@@ -89,7 +90,7 @@ body {
   
   @font-face {
     font-family: "Haiyanzhishidongdong-Regular-2";
-    src: url("/Haiyanzhishidongdong-Regular-2.ttf") format("truetype");
+    src: url("fonts/Haiyanzhishidongdong-Regular-2.ttf") format("truetype");
   }
   
   #contact {
@@ -121,7 +122,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(https://github.com/SoraTang/Web/releases/download/v1.0.0/mountain.png);
+    background-image: url('https://github.com/SoraTang/Web/releases/download/v1.0.0/mountain.png');
     background-size: cover;
     background-position: center center;
     z-index: 2;
@@ -340,7 +341,7 @@ body {
   }
   /* 星星图片悬浮时切换图片 */
   #star:hover {
-    content: url(https://github.com/SoraTang/Web/releases/download/v1.0.0/star2.png); /* 当鼠标悬浮时切换图片 */
+    content: url('https://github.com/SoraTang/Web/releases/download/v1.0.0/star2.png'); /* 当鼠标悬浮时切换图片 */
   }
   
   #footer-image {
