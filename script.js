@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Frame animation loop
     const interval = setInterval(() => {
         frameIndex = (frameIndex + 1) % frames.length; // Loop through frames
-        frameElement.src = `images/${frames[frameIndex]}`;
+        frameElement.src = `https://github.com/SoraTang/Web/releases/download/v1.0.0/${frames[frameIndex]}`;
     }, 200); // Adjust the delay to control the animation speed
 
     // Simulate loading completion
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const animationInterval = setInterval(() => {
             // 切换到下一帧
             cursorIndex = (cursorIndex + 1) % cursorFrames.length;
-            body.style.cursor = `url('images/${cursorFrames[cursorIndex]}'), auto`;
+            body.style.cursor = `url('https://github.com/SoraTang/Web/releases/download/v1.0.0/${cursorFrames[cursorIndex]}'), auto`;
 
             // 动画结束后停止循环
             if (cursorIndex === cursorFrames.length - 1) {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // 将光标恢复到第一帧
                 setTimeout(() => {
-                    body.style.cursor = `url('images/${cursorFrames[0]}'), auto`;
+                    body.style.cursor = `url('https://github.com/SoraTang/Web/releases/download/v1.0.0/${cursorFrames[0]}'), auto`;
                 }, 100); // 确保动画结束后回到 mouse1
             }
         }, 100); // 每帧切换时间 (毫秒)
